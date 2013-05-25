@@ -1,0 +1,42 @@
+file 1462 1369395040                                            
+version 2
+run RandomWPMobility-0-20130524-14:30:00-28449
+attr configname RandomWPMobility
+attr datetime 20130524-14:30:00
+attr experiment RandomWPMobility
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network MobileNet
+attr processid 28449
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 5  MobileNet.host[0].wlan.mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 4  MobileNet.host[0].wlan.mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 12  MobileNet.host[1].wlan.mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 11  MobileNet.host[1].wlan.mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 19  MobileNet.host[2].wlan.mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 18  MobileNet.host[2].wlan.mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITBROADCAST=5, WAITCTS=6, WAITDIFS=2, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+4	1358 16 0 0 0 0 2 0 0 0 0
+5	1374 16 0 0 0 0 2 0 0 0 0
+11	1390 18 0 0 0 0 2 0 0 0 0
+12	1408 18 0 0 0 0 2 0 0 0 0
+18	1426 18 0 0 0 0 2 0 0 0 0
+19	1444 18 0 0 0 0 2 0 0 0 0

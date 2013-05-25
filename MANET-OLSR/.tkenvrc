@@ -1,0 +1,6 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "Manet_Network" "Manet_Network" "2" "607x337+0+24:normal"
+inspector ".OLSR Pkt" "IPDatagram" "1" "460x314+0+24:normal"
+inspector "Manet_Network.host[0].mobility" "NullMobility" "1" "492x314+252+412:normal"
+inspector "Manet_Network.host[8].mobility" "NullMobility" "1" "498x314+304+157:normal"
+

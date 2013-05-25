@@ -1,0 +1,283 @@
+version 2
+run UDP_NC_simple_var_gensize_500B-0-20130525-13:10:28-5522
+attr N 1
+attr configname UDP_NC_simple_var_gensize_500B
+attr datetime 20130525-13:10:28
+attr experiment UDP_NC_simple_var_gensize_500B
+attr inifile omnetpp.ini
+attr iterationvars "$N=1, $0=4823, $1=9918, $2=14153, $3=13923, $4=15875, $5=5657, $6=24472, $7=18543, $8=13206"
+attr iterationvars2 "$N=1, $0=4823, $1=9918, $2=14153, $3=13923, $4=15875, $5=5657, $6=24472, $7=18543, $8=13206, $repetition=0"
+attr measurement "$N=1, $0=4823, $1=9918, $2=14153, $3=13923, $4=15875, $5=5657, $6=24472, $7=18543, $8=13206"
+attr network Manet_Network
+attr processid 5522
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar . 	N 	1
+scalar Manet_Network.host[0].udpApp[0] 	"Total send" 	0
+scalar Manet_Network.host[0].udpApp[0] 	"Total received" 	0
+scalar Manet_Network.host[0].udpApp[0] 	"Total deleted" 	0
+scalar Manet_Network.host[0].udpApp[0] 	"Mean delay" 	0
+scalar Manet_Network.host[0].udpApp[0] 	"Min delay" 	0
+scalar Manet_Network.host[0].udpApp[0] 	"Max delay" 	0
+scalar Manet_Network.host[0].udpApp[0] 	"Deviation delay" 	-nan
+scalar Manet_Network.host[0].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalSent " 	0
+scalar Manet_Network.host[0].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalRec " 	2
+scalar Manet_Network.host[0].manetrouting.manetmanager.manetroutingprotocol 	"OLSR Hello Sent " 	1
+scalar Manet_Network.host[0].manetrouting.manetmanager.manetroutingprotocol 	"OLSR tc sent " 	0
+scalar Manet_Network.host[0].manetrouting.manetmanager.manetroutingprotocol 	"OLSR mid sent " 	0
+scalar Manet_Network.host[0].wlan[0].mgmt 	"packets received by queue" 	0
+scalar Manet_Network.host[0].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar Manet_Network.host[0].wlan[0].mac 	numSent 	0
+scalar Manet_Network.host[0].wlan[0].mac 	numSentWithoutRetry 	0
+scalar Manet_Network.host[0].wlan[0].mac 	numReceived 	0
+scalar Manet_Network.host[0].wlan[0].mac 	numSentBroadcast 	-1
+scalar Manet_Network.host[0].wlan[0].mac 	numReceivedBroadcast 	1
+scalar Manet_Network.host[0].wlan[0].mac 	numReceivedOther 	0
+scalar Manet_Network.host[0].wlan[0].mac 	numCollision 	0
+scalar Manet_Network.host[0].wlan[0].mac 	numGivenUp 	0
+scalar Manet_Network.host[0].wlan[0].mac 	numAckSend 	0
+scalar Manet_Network.host[0].wlan[0].mac 	numRetry 	0
+scalar Manet_Network.host[1].udpApp[0] 	"Total send" 	0
+scalar Manet_Network.host[1].udpApp[0] 	"Total received" 	0
+scalar Manet_Network.host[1].udpApp[0] 	"Total deleted" 	0
+scalar Manet_Network.host[1].udpApp[0] 	"Mean delay" 	0
+scalar Manet_Network.host[1].udpApp[0] 	"Min delay" 	0
+scalar Manet_Network.host[1].udpApp[0] 	"Max delay" 	0
+scalar Manet_Network.host[1].udpApp[0] 	"Deviation delay" 	-nan
+scalar Manet_Network.host[1].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalSent " 	0
+scalar Manet_Network.host[1].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalRec " 	0
+scalar Manet_Network.host[1].manetrouting.manetmanager.manetroutingprotocol 	"OLSR Hello Sent " 	1
+scalar Manet_Network.host[1].manetrouting.manetmanager.manetroutingprotocol 	"OLSR tc sent " 	0
+scalar Manet_Network.host[1].manetrouting.manetmanager.manetroutingprotocol 	"OLSR mid sent " 	0
+scalar Manet_Network.host[1].wlan[0].mgmt 	"packets received by queue" 	0
+scalar Manet_Network.host[1].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar Manet_Network.host[1].wlan[0].mac 	numSent 	0
+scalar Manet_Network.host[1].wlan[0].mac 	numSentWithoutRetry 	0
+scalar Manet_Network.host[1].wlan[0].mac 	numReceived 	0
+scalar Manet_Network.host[1].wlan[0].mac 	numSentBroadcast 	-1
+scalar Manet_Network.host[1].wlan[0].mac 	numReceivedBroadcast 	0
+scalar Manet_Network.host[1].wlan[0].mac 	numReceivedOther 	0
+scalar Manet_Network.host[1].wlan[0].mac 	numCollision 	0
+scalar Manet_Network.host[1].wlan[0].mac 	numGivenUp 	0
+scalar Manet_Network.host[1].wlan[0].mac 	numAckSend 	0
+scalar Manet_Network.host[1].wlan[0].mac 	numRetry 	0
+scalar Manet_Network.host[2].udpApp[0] 	"Total send" 	0
+scalar Manet_Network.host[2].udpApp[0] 	"Total received" 	0
+scalar Manet_Network.host[2].udpApp[0] 	"Total deleted" 	0
+scalar Manet_Network.host[2].udpApp[0] 	"Mean delay" 	0
+scalar Manet_Network.host[2].udpApp[0] 	"Min delay" 	0
+scalar Manet_Network.host[2].udpApp[0] 	"Max delay" 	0
+scalar Manet_Network.host[2].udpApp[0] 	"Deviation delay" 	-nan
+scalar Manet_Network.host[2].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalSent " 	0
+scalar Manet_Network.host[2].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalRec " 	1
+scalar Manet_Network.host[2].manetrouting.manetmanager.manetroutingprotocol 	"OLSR Hello Sent " 	1
+scalar Manet_Network.host[2].manetrouting.manetmanager.manetroutingprotocol 	"OLSR tc sent " 	0
+scalar Manet_Network.host[2].manetrouting.manetmanager.manetroutingprotocol 	"OLSR mid sent " 	0
+scalar Manet_Network.host[2].wlan[0].mgmt 	"packets received by queue" 	0
+scalar Manet_Network.host[2].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar Manet_Network.host[2].wlan[0].mac 	numSent 	0
+scalar Manet_Network.host[2].wlan[0].mac 	numSentWithoutRetry 	0
+scalar Manet_Network.host[2].wlan[0].mac 	numReceived 	0
+scalar Manet_Network.host[2].wlan[0].mac 	numSentBroadcast 	-1
+scalar Manet_Network.host[2].wlan[0].mac 	numReceivedBroadcast 	0
+scalar Manet_Network.host[2].wlan[0].mac 	numReceivedOther 	0
+scalar Manet_Network.host[2].wlan[0].mac 	numCollision 	0
+scalar Manet_Network.host[2].wlan[0].mac 	numGivenUp 	0
+scalar Manet_Network.host[2].wlan[0].mac 	numAckSend 	0
+scalar Manet_Network.host[2].wlan[0].mac 	numRetry 	0
+scalar Manet_Network.host[3].udpApp[0] 	"Total send" 	0
+scalar Manet_Network.host[3].udpApp[0] 	"Total received" 	0
+scalar Manet_Network.host[3].udpApp[0] 	"Total deleted" 	0
+scalar Manet_Network.host[3].udpApp[0] 	"Mean delay" 	0
+scalar Manet_Network.host[3].udpApp[0] 	"Min delay" 	0
+scalar Manet_Network.host[3].udpApp[0] 	"Max delay" 	0
+scalar Manet_Network.host[3].udpApp[0] 	"Deviation delay" 	-nan
+scalar Manet_Network.host[3].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalSent " 	0
+scalar Manet_Network.host[3].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalRec " 	1
+scalar Manet_Network.host[3].manetrouting.manetmanager.manetroutingprotocol 	"OLSR Hello Sent " 	1
+scalar Manet_Network.host[3].manetrouting.manetmanager.manetroutingprotocol 	"OLSR tc sent " 	0
+scalar Manet_Network.host[3].manetrouting.manetmanager.manetroutingprotocol 	"OLSR mid sent " 	0
+scalar Manet_Network.host[3].wlan[0].mgmt 	"packets received by queue" 	0
+scalar Manet_Network.host[3].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar Manet_Network.host[3].wlan[0].mac 	numSent 	0
+scalar Manet_Network.host[3].wlan[0].mac 	numSentWithoutRetry 	0
+scalar Manet_Network.host[3].wlan[0].mac 	numReceived 	0
+scalar Manet_Network.host[3].wlan[0].mac 	numSentBroadcast 	-1
+scalar Manet_Network.host[3].wlan[0].mac 	numReceivedBroadcast 	0
+scalar Manet_Network.host[3].wlan[0].mac 	numReceivedOther 	0
+scalar Manet_Network.host[3].wlan[0].mac 	numCollision 	0
+scalar Manet_Network.host[3].wlan[0].mac 	numGivenUp 	0
+scalar Manet_Network.host[3].wlan[0].mac 	numAckSend 	0
+scalar Manet_Network.host[3].wlan[0].mac 	numRetry 	0
+scalar Manet_Network.host[4].udpApp[0] 	"Total send" 	0
+scalar Manet_Network.host[4].udpApp[0] 	"Total received" 	0
+scalar Manet_Network.host[4].udpApp[0] 	"Total deleted" 	0
+scalar Manet_Network.host[4].udpApp[0] 	"Mean delay" 	0
+scalar Manet_Network.host[4].udpApp[0] 	"Min delay" 	0
+scalar Manet_Network.host[4].udpApp[0] 	"Max delay" 	0
+scalar Manet_Network.host[4].udpApp[0] 	"Deviation delay" 	-nan
+scalar Manet_Network.host[4].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalSent " 	0
+scalar Manet_Network.host[4].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalRec " 	1
+scalar Manet_Network.host[4].manetrouting.manetmanager.manetroutingprotocol 	"OLSR Hello Sent " 	1
+scalar Manet_Network.host[4].manetrouting.manetmanager.manetroutingprotocol 	"OLSR tc sent " 	0
+scalar Manet_Network.host[4].manetrouting.manetmanager.manetroutingprotocol 	"OLSR mid sent " 	0
+scalar Manet_Network.host[4].wlan[0].mgmt 	"packets received by queue" 	0
+scalar Manet_Network.host[4].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar Manet_Network.host[4].wlan[0].mac 	numSent 	0
+scalar Manet_Network.host[4].wlan[0].mac 	numSentWithoutRetry 	0
+scalar Manet_Network.host[4].wlan[0].mac 	numReceived 	0
+scalar Manet_Network.host[4].wlan[0].mac 	numSentBroadcast 	-1
+scalar Manet_Network.host[4].wlan[0].mac 	numReceivedBroadcast 	0
+scalar Manet_Network.host[4].wlan[0].mac 	numReceivedOther 	0
+scalar Manet_Network.host[4].wlan[0].mac 	numCollision 	0
+scalar Manet_Network.host[4].wlan[0].mac 	numGivenUp 	0
+scalar Manet_Network.host[4].wlan[0].mac 	numAckSend 	0
+scalar Manet_Network.host[4].wlan[0].mac 	numRetry 	0
+scalar Manet_Network.host[5].udpApp[0] 	"Total send" 	0
+scalar Manet_Network.host[5].udpApp[0] 	"Total received" 	0
+scalar Manet_Network.host[5].udpApp[0] 	"Total deleted" 	0
+scalar Manet_Network.host[5].udpApp[0] 	"Mean delay" 	0
+scalar Manet_Network.host[5].udpApp[0] 	"Min delay" 	0
+scalar Manet_Network.host[5].udpApp[0] 	"Max delay" 	0
+scalar Manet_Network.host[5].udpApp[0] 	"Deviation delay" 	-nan
+scalar Manet_Network.host[5].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalSent " 	0
+scalar Manet_Network.host[5].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalRec " 	1
+scalar Manet_Network.host[5].manetrouting.manetmanager.manetroutingprotocol 	"OLSR Hello Sent " 	1
+scalar Manet_Network.host[5].manetrouting.manetmanager.manetroutingprotocol 	"OLSR tc sent " 	0
+scalar Manet_Network.host[5].manetrouting.manetmanager.manetroutingprotocol 	"OLSR mid sent " 	0
+scalar Manet_Network.host[5].wlan[0].mgmt 	"packets received by queue" 	0
+scalar Manet_Network.host[5].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar Manet_Network.host[5].wlan[0].mac 	numSent 	0
+scalar Manet_Network.host[5].wlan[0].mac 	numSentWithoutRetry 	0
+scalar Manet_Network.host[5].wlan[0].mac 	numReceived 	0
+scalar Manet_Network.host[5].wlan[0].mac 	numSentBroadcast 	-1
+scalar Manet_Network.host[5].wlan[0].mac 	numReceivedBroadcast 	0
+scalar Manet_Network.host[5].wlan[0].mac 	numReceivedOther 	0
+scalar Manet_Network.host[5].wlan[0].mac 	numCollision 	0
+scalar Manet_Network.host[5].wlan[0].mac 	numGivenUp 	0
+scalar Manet_Network.host[5].wlan[0].mac 	numAckSend 	0
+scalar Manet_Network.host[5].wlan[0].mac 	numRetry 	0
+scalar Manet_Network.host[6].udpApp[0] 	"Total send" 	0
+scalar Manet_Network.host[6].udpApp[0] 	"Total received" 	0
+scalar Manet_Network.host[6].udpApp[0] 	"Total deleted" 	0
+scalar Manet_Network.host[6].udpApp[0] 	"Mean delay" 	0
+scalar Manet_Network.host[6].udpApp[0] 	"Min delay" 	0
+scalar Manet_Network.host[6].udpApp[0] 	"Max delay" 	0
+scalar Manet_Network.host[6].udpApp[0] 	"Deviation delay" 	-nan
+scalar Manet_Network.host[6].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalSent " 	0
+scalar Manet_Network.host[6].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalRec " 	1
+scalar Manet_Network.host[6].manetrouting.manetmanager.manetroutingprotocol 	"OLSR Hello Sent " 	1
+scalar Manet_Network.host[6].manetrouting.manetmanager.manetroutingprotocol 	"OLSR tc sent " 	0
+scalar Manet_Network.host[6].manetrouting.manetmanager.manetroutingprotocol 	"OLSR mid sent " 	0
+scalar Manet_Network.host[6].wlan[0].mgmt 	"packets received by queue" 	0
+scalar Manet_Network.host[6].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar Manet_Network.host[6].wlan[0].mac 	numSent 	0
+scalar Manet_Network.host[6].wlan[0].mac 	numSentWithoutRetry 	0
+scalar Manet_Network.host[6].wlan[0].mac 	numReceived 	0
+scalar Manet_Network.host[6].wlan[0].mac 	numSentBroadcast 	-1
+scalar Manet_Network.host[6].wlan[0].mac 	numReceivedBroadcast 	0
+scalar Manet_Network.host[6].wlan[0].mac 	numReceivedOther 	0
+scalar Manet_Network.host[6].wlan[0].mac 	numCollision 	0
+scalar Manet_Network.host[6].wlan[0].mac 	numGivenUp 	0
+scalar Manet_Network.host[6].wlan[0].mac 	numAckSend 	0
+scalar Manet_Network.host[6].wlan[0].mac 	numRetry 	0
+scalar Manet_Network.host[7].udpApp[0] 	"Total send" 	0
+scalar Manet_Network.host[7].udpApp[0] 	"Total received" 	0
+scalar Manet_Network.host[7].udpApp[0] 	"Total deleted" 	0
+scalar Manet_Network.host[7].udpApp[0] 	"Mean delay" 	0
+scalar Manet_Network.host[7].udpApp[0] 	"Min delay" 	0
+scalar Manet_Network.host[7].udpApp[0] 	"Max delay" 	0
+scalar Manet_Network.host[7].udpApp[0] 	"Deviation delay" 	-nan
+scalar Manet_Network.host[7].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalSent " 	1
+scalar Manet_Network.host[7].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalRec " 	2
+scalar Manet_Network.host[7].manetrouting.manetmanager.manetroutingprotocol 	"OLSR Hello Sent " 	1
+scalar Manet_Network.host[7].manetrouting.manetmanager.manetroutingprotocol 	"OLSR tc sent " 	0
+scalar Manet_Network.host[7].manetrouting.manetmanager.manetroutingprotocol 	"OLSR mid sent " 	0
+scalar Manet_Network.host[7].wlan[0].mgmt 	"packets received by queue" 	1
+scalar Manet_Network.host[7].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar Manet_Network.host[7].wlan[0].mac 	numSent 	0
+scalar Manet_Network.host[7].wlan[0].mac 	numSentWithoutRetry 	0
+scalar Manet_Network.host[7].wlan[0].mac 	numReceived 	0
+scalar Manet_Network.host[7].wlan[0].mac 	numSentBroadcast 	-1
+scalar Manet_Network.host[7].wlan[0].mac 	numReceivedBroadcast 	1
+scalar Manet_Network.host[7].wlan[0].mac 	numReceivedOther 	0
+scalar Manet_Network.host[7].wlan[0].mac 	numCollision 	0
+scalar Manet_Network.host[7].wlan[0].mac 	numGivenUp 	0
+scalar Manet_Network.host[7].wlan[0].mac 	numAckSend 	0
+scalar Manet_Network.host[7].wlan[0].mac 	numRetry 	0
+scalar Manet_Network.host[8].udpApp[0] 	"Total send" 	0
+scalar Manet_Network.host[8].udpApp[0] 	"Total received" 	0
+scalar Manet_Network.host[8].udpApp[0] 	"Total deleted" 	0
+scalar Manet_Network.host[8].udpApp[0] 	"Mean delay" 	0
+scalar Manet_Network.host[8].udpApp[0] 	"Min delay" 	0
+scalar Manet_Network.host[8].udpApp[0] 	"Max delay" 	0
+scalar Manet_Network.host[8].udpApp[0] 	"Deviation delay" 	-nan
+scalar Manet_Network.host[8].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalSent " 	0
+scalar Manet_Network.host[8].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalRec " 	2
+scalar Manet_Network.host[8].manetrouting.manetmanager.manetroutingprotocol 	"OLSR Hello Sent " 	1
+scalar Manet_Network.host[8].manetrouting.manetmanager.manetroutingprotocol 	"OLSR tc sent " 	0
+scalar Manet_Network.host[8].manetrouting.manetmanager.manetroutingprotocol 	"OLSR mid sent " 	0
+scalar Manet_Network.host[8].wlan[0].mgmt 	"packets received by queue" 	0
+scalar Manet_Network.host[8].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar Manet_Network.host[8].wlan[0].mac 	numSent 	0
+scalar Manet_Network.host[8].wlan[0].mac 	numSentWithoutRetry 	0
+scalar Manet_Network.host[8].wlan[0].mac 	numReceived 	0
+scalar Manet_Network.host[8].wlan[0].mac 	numSentBroadcast 	-1
+scalar Manet_Network.host[8].wlan[0].mac 	numReceivedBroadcast 	1
+scalar Manet_Network.host[8].wlan[0].mac 	numReceivedOther 	0
+scalar Manet_Network.host[8].wlan[0].mac 	numCollision 	0
+scalar Manet_Network.host[8].wlan[0].mac 	numGivenUp 	0
+scalar Manet_Network.host[8].wlan[0].mac 	numAckSend 	0
+scalar Manet_Network.host[8].wlan[0].mac 	numRetry 	0
+scalar Manet_Network.host[9].udpApp[0] 	"Total send" 	0
+scalar Manet_Network.host[9].udpApp[0] 	"Total received" 	0
+scalar Manet_Network.host[9].udpApp[0] 	"Total deleted" 	0
+scalar Manet_Network.host[9].udpApp[0] 	"Mean delay" 	0
+scalar Manet_Network.host[9].udpApp[0] 	"Min delay" 	0
+scalar Manet_Network.host[9].udpApp[0] 	"Max delay" 	0
+scalar Manet_Network.host[9].udpApp[0] 	"Deviation delay" 	-nan
+scalar Manet_Network.host[9].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalSent " 	1
+scalar Manet_Network.host[9].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalRec " 	1
+scalar Manet_Network.host[9].manetrouting.manetmanager.manetroutingprotocol 	"OLSR Hello Sent " 	1
+scalar Manet_Network.host[9].manetrouting.manetmanager.manetroutingprotocol 	"OLSR tc sent " 	0
+scalar Manet_Network.host[9].manetrouting.manetmanager.manetroutingprotocol 	"OLSR mid sent " 	0
+scalar Manet_Network.host[9].wlan[0].mgmt 	"packets received by queue" 	1
+scalar Manet_Network.host[9].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar Manet_Network.host[9].wlan[0].mac 	numSent 	0
+scalar Manet_Network.host[9].wlan[0].mac 	numSentWithoutRetry 	0
+scalar Manet_Network.host[9].wlan[0].mac 	numReceived 	0
+scalar Manet_Network.host[9].wlan[0].mac 	numSentBroadcast 	0
+scalar Manet_Network.host[9].wlan[0].mac 	numReceivedBroadcast 	0
+scalar Manet_Network.host[9].wlan[0].mac 	numReceivedOther 	0
+scalar Manet_Network.host[9].wlan[0].mac 	numCollision 	0
+scalar Manet_Network.host[9].wlan[0].mac 	numGivenUp 	0
+scalar Manet_Network.host[9].wlan[0].mac 	numAckSend 	0
+scalar Manet_Network.host[9].wlan[0].mac 	numRetry 	0
+scalar Manet_Network.host[10].udpApp[0] 	"Total send" 	0
+scalar Manet_Network.host[10].udpApp[0] 	"Total received" 	0
+scalar Manet_Network.host[10].udpApp[0] 	"Total deleted" 	0
+scalar Manet_Network.host[10].udpApp[0] 	"Mean delay" 	0
+scalar Manet_Network.host[10].udpApp[0] 	"Min delay" 	0
+scalar Manet_Network.host[10].udpApp[0] 	"Max delay" 	0
+scalar Manet_Network.host[10].udpApp[0] 	"Deviation delay" 	-nan
+scalar Manet_Network.host[10].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalSent " 	1
+scalar Manet_Network.host[10].manetrouting.manetmanager.manetroutingprotocol 	"OLSR totalRec " 	1
+scalar Manet_Network.host[10].manetrouting.manetmanager.manetroutingprotocol 	"OLSR Hello Sent " 	1
+scalar Manet_Network.host[10].manetrouting.manetmanager.manetroutingprotocol 	"OLSR tc sent " 	0
+scalar Manet_Network.host[10].manetrouting.manetmanager.manetroutingprotocol 	"OLSR mid sent " 	0
+scalar Manet_Network.host[10].wlan[0].mgmt 	"packets received by queue" 	1
+scalar Manet_Network.host[10].wlan[0].mgmt 	"packets dropped by queue" 	0
+scalar Manet_Network.host[10].wlan[0].mac 	numSent 	0
+scalar Manet_Network.host[10].wlan[0].mac 	numSentWithoutRetry 	0
+scalar Manet_Network.host[10].wlan[0].mac 	numReceived 	0
+scalar Manet_Network.host[10].wlan[0].mac 	numSentBroadcast 	0
+scalar Manet_Network.host[10].wlan[0].mac 	numReceivedBroadcast 	0
+scalar Manet_Network.host[10].wlan[0].mac 	numReceivedOther 	0
+scalar Manet_Network.host[10].wlan[0].mac 	numCollision 	0
+scalar Manet_Network.host[10].wlan[0].mac 	numGivenUp 	0
+scalar Manet_Network.host[10].wlan[0].mac 	numAckSend 	0
+scalar Manet_Network.host[10].wlan[0].mac 	numRetry 	0

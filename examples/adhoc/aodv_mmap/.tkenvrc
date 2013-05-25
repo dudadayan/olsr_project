@@ -1,0 +1,3 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "mmap_example" "mmap_example" "2" "851x567+413+122:normal"
+

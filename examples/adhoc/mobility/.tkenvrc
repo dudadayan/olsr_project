@@ -1,0 +1,3 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "MobileNet" "MobileNet" "2" "607x337+0+24:normal"
+

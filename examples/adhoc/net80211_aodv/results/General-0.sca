@@ -1,0 +1,697 @@
+version 2
+run General-0-20130410-20:17:20-30691
+attr configname General
+attr datetime 20130410-20:17:20
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network inet.examples.adhoc.net80211_aodv.Net80211_aodv
+attr processid 30691
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar Net80211_aodv.fixhost[0].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.fixhost[0].manetrouting.manetmanager.manetroutingprotocol 	"simulated time" 	10.007170502226
+scalar Net80211_aodv.fixhost[0].manetrouting.manetmanager.manetroutingprotocol 	"Aodv totalSend " 	7
+scalar Net80211_aodv.fixhost[0].manetrouting.manetmanager.manetroutingprotocol 	"rreq send" 	7
+scalar Net80211_aodv.fixhost[0].manetrouting.manetmanager.manetroutingprotocol 	"rreq rec" 	49
+scalar Net80211_aodv.fixhost[0].manetrouting.manetmanager.manetroutingprotocol 	"rrep send" 	0
+scalar Net80211_aodv.fixhost[0].manetrouting.manetmanager.manetroutingprotocol 	"rrep rec" 	0
+scalar Net80211_aodv.fixhost[0].manetrouting.manetmanager.manetroutingprotocol 	"rrep ack send" 	0
+scalar Net80211_aodv.fixhost[0].manetrouting.manetmanager.manetroutingprotocol 	"rrep ack rec" 	0
+scalar Net80211_aodv.fixhost[0].manetrouting.manetmanager.manetroutingprotocol 	"rerr send" 	0
+scalar Net80211_aodv.fixhost[0].manetrouting.manetmanager.manetroutingprotocol 	"rerr rec" 	0
+scalar Net80211_aodv.fixhost[0].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.fixhost[0].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.fixhost[0].wlan.mac 	numSent 	0
+scalar Net80211_aodv.fixhost[0].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.fixhost[0].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.fixhost[0].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.fixhost[0].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.fixhost[0].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.fixhost[0].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.fixhost[0].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.fixhost[0].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.fixhost[0].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[0].udpApp[0] 	"Total send" 	1
+scalar Net80211_aodv.host[0].udpApp[0] 	"Total received" 	0
+scalar Net80211_aodv.host[0].udpApp[0] 	"Total deleted" 	0
+scalar Net80211_aodv.host[0].udpApp[0] 	"Mean delay" 	0
+scalar Net80211_aodv.host[0].udpApp[0] 	"Min delay" 	0
+scalar Net80211_aodv.host[0].udpApp[0] 	"Max delay" 	0
+scalar Net80211_aodv.host[0].udpApp[0] 	"Deviation delay" 	-nan
+scalar Net80211_aodv.host[0].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[0].wlan.mgmt 	"packets received by queue" 	1
+scalar Net80211_aodv.host[0].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[0].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[0].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[0].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[0].wlan.mac 	numSentBroadcast 	0
+scalar Net80211_aodv.host[0].wlan.mac 	numReceivedBroadcast 	2
+scalar Net80211_aodv.host[0].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[0].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[0].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[0].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[0].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[1].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[1].wlan.mgmt 	"packets received by queue" 	1
+scalar Net80211_aodv.host[1].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[1].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[1].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[1].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[1].wlan.mac 	numSentBroadcast 	0
+scalar Net80211_aodv.host[1].wlan.mac 	numReceivedBroadcast 	2
+scalar Net80211_aodv.host[1].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[1].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[1].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[1].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[1].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[2].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[2].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[2].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[2].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[2].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[2].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[2].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[2].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[2].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[2].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[2].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[2].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[2].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[3].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[3].wlan.mgmt 	"packets received by queue" 	1
+scalar Net80211_aodv.host[3].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[3].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[3].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[3].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[3].wlan.mac 	numSentBroadcast 	0
+scalar Net80211_aodv.host[3].wlan.mac 	numReceivedBroadcast 	2
+scalar Net80211_aodv.host[3].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[3].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[3].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[3].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[3].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[4].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[4].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[4].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[4].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[4].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[4].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[4].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[4].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[4].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[4].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[4].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[4].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[4].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[5].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[5].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[5].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[5].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[5].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[5].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[5].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[5].wlan.mac 	numReceivedBroadcast 	2
+scalar Net80211_aodv.host[5].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[5].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[5].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[5].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[5].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[6].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[6].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[6].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[6].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[6].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[6].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[6].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[6].wlan.mac 	numReceivedBroadcast 	1
+scalar Net80211_aodv.host[6].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[6].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[6].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[6].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[6].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[7].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[7].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[7].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[7].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[7].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[7].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[7].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[7].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[7].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[7].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[7].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[7].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[7].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[8].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[8].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[8].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[8].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[8].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[8].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[8].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[8].wlan.mac 	numReceivedBroadcast 	1
+scalar Net80211_aodv.host[8].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[8].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[8].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[8].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[8].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[9].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[9].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[9].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[9].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[9].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[9].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[9].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[9].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[9].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[9].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[9].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[9].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[9].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[10].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[10].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[10].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[10].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[10].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[10].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[10].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[10].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[10].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[10].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[10].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[10].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[10].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[11].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[11].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[11].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[11].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[11].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[11].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[11].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[11].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[11].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[11].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[11].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[11].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[11].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[12].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[12].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[12].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[12].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[12].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[12].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[12].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[12].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[12].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[12].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[12].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[12].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[12].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[13].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[13].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[13].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[13].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[13].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[13].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[13].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[13].wlan.mac 	numReceivedBroadcast 	2
+scalar Net80211_aodv.host[13].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[13].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[13].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[13].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[13].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[14].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[14].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[14].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[14].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[14].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[14].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[14].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[14].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[14].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[14].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[14].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[14].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[14].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[15].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[15].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[15].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[15].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[15].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[15].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[15].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[15].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[15].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[15].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[15].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[15].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[15].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[16].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[16].wlan.mgmt 	"packets received by queue" 	1
+scalar Net80211_aodv.host[16].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[16].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[16].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[16].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[16].wlan.mac 	numSentBroadcast 	0
+scalar Net80211_aodv.host[16].wlan.mac 	numReceivedBroadcast 	2
+scalar Net80211_aodv.host[16].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[16].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[16].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[16].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[16].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[17].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[17].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[17].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[17].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[17].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[17].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[17].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[17].wlan.mac 	numReceivedBroadcast 	2
+scalar Net80211_aodv.host[17].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[17].wlan.mac 	numCollision 	1
+scalar Net80211_aodv.host[17].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[17].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[17].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[18].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[18].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[18].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[18].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[18].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[18].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[18].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[18].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[18].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[18].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[18].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[18].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[18].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[19].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[19].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[19].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[19].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[19].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[19].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[19].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[19].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[19].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[19].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[19].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[19].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[19].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[20].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[20].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[20].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[20].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[20].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[20].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[20].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[20].wlan.mac 	numReceivedBroadcast 	1
+scalar Net80211_aodv.host[20].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[20].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[20].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[20].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[20].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[21].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[21].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[21].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[21].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[21].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[21].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[21].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[21].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[21].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[21].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[21].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[21].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[21].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[22].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[22].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[22].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[22].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[22].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[22].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[22].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[22].wlan.mac 	numReceivedBroadcast 	3
+scalar Net80211_aodv.host[22].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[22].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[22].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[22].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[22].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[23].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[23].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[23].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[23].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[23].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[23].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[23].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[23].wlan.mac 	numReceivedBroadcast 	3
+scalar Net80211_aodv.host[23].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[23].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[23].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[23].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[23].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[24].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[24].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[24].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[24].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[24].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[24].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[24].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[24].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[24].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[24].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[24].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[24].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[24].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[25].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[25].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[25].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[25].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[25].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[25].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[25].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[25].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[25].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[25].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[25].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[25].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[25].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[26].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[26].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[26].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[26].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[26].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[26].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[26].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[26].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[26].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[26].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[26].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[26].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[26].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[27].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[27].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[27].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[27].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[27].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[27].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[27].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[27].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[27].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[27].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[27].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[27].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[27].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[28].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[28].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[28].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[28].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[28].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[28].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[28].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[28].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[28].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[28].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[28].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[28].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[28].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[29].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[29].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[29].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[29].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[29].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[29].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[29].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[29].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[29].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[29].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[29].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[29].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[29].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[30].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[30].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[30].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[30].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[30].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[30].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[30].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[30].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[30].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[30].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[30].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[30].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[30].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[31].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[31].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[31].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[31].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[31].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[31].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[31].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[31].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[31].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[31].wlan.mac 	numCollision 	1
+scalar Net80211_aodv.host[31].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[31].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[31].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[32].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[32].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[32].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[32].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[32].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[32].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[32].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[32].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[32].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[32].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[32].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[32].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[32].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[33].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[33].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[33].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[33].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[33].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[33].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[33].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[33].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[33].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[33].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[33].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[33].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[33].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[34].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[34].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[34].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[34].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[34].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[34].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[34].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[34].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[34].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[34].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[34].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[34].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[34].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[35].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[35].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[35].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[35].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[35].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[35].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[35].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[35].wlan.mac 	numReceivedBroadcast 	1
+scalar Net80211_aodv.host[35].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[35].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[35].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[35].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[35].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[36].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[36].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[36].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[36].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[36].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[36].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[36].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[36].wlan.mac 	numReceivedBroadcast 	1
+scalar Net80211_aodv.host[36].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[36].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[36].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[36].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[36].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[37].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[37].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[37].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[37].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[37].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[37].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[37].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[37].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[37].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[37].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[37].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[37].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[37].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[38].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[38].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[38].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[38].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[38].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[38].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[38].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[38].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[38].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[38].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[38].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[38].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[38].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[39].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[39].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[39].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[39].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[39].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[39].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[39].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[39].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[39].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[39].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[39].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[39].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[39].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[40].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[40].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[40].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[40].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[40].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[40].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[40].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[40].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[40].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[40].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[40].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[40].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[40].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[41].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[41].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[41].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[41].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[41].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[41].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[41].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[41].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[41].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[41].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[41].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[41].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[41].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[42].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[42].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[42].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[42].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[42].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[42].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[42].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[42].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[42].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[42].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[42].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[42].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[42].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[43].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[43].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[43].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[43].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[43].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[43].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[43].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[43].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[43].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[43].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[43].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[43].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[43].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[44].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[44].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[44].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[44].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[44].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[44].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[44].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[44].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[44].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[44].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[44].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[44].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[44].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[45].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[45].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[45].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[45].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[45].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[45].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[45].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[45].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[45].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[45].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[45].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[45].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[45].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[46].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[46].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[46].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[46].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[46].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[46].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[46].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[46].wlan.mac 	numReceivedBroadcast 	1
+scalar Net80211_aodv.host[46].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[46].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[46].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[46].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[46].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[47].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[47].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[47].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[47].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[47].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[47].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[47].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[47].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[47].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[47].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[47].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[47].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[47].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[48].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[48].wlan.mgmt 	"packets received by queue" 	1
+scalar Net80211_aodv.host[48].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[48].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[48].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[48].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[48].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[48].wlan.mac 	numReceivedBroadcast 	3
+scalar Net80211_aodv.host[48].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[48].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[48].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[48].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[48].wlan.mac 	numRetry 	0
+scalar Net80211_aodv.host[49].pingApp 	"Pings sent" 	0
+scalar Net80211_aodv.host[49].wlan.mgmt 	"packets received by queue" 	0
+scalar Net80211_aodv.host[49].wlan.mgmt 	"packets dropped by queue" 	0
+scalar Net80211_aodv.host[49].wlan.mac 	numSent 	0
+scalar Net80211_aodv.host[49].wlan.mac 	numSentWithoutRetry 	0
+scalar Net80211_aodv.host[49].wlan.mac 	numReceived 	0
+scalar Net80211_aodv.host[49].wlan.mac 	numSentBroadcast 	-1
+scalar Net80211_aodv.host[49].wlan.mac 	numReceivedBroadcast 	0
+scalar Net80211_aodv.host[49].wlan.mac 	numReceivedOther 	0
+scalar Net80211_aodv.host[49].wlan.mac 	numCollision 	0
+scalar Net80211_aodv.host[49].wlan.mac 	numGivenUp 	0
+scalar Net80211_aodv.host[49].wlan.mac 	numAckSend 	0
+scalar Net80211_aodv.host[49].wlan.mac 	numRetry 	0

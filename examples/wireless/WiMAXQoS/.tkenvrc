@@ -1,0 +1,57 @@
+# Tkenv configuration
+option updatefreq_fast	{50}
+option updatefreq_express	{10000}
+option stepdelay	{300 ms}
+option use_mainwindow	{1}
+option print_banners	{1}
+option animation_enabled	{1}
+option nexteventmarkers	{1}
+option senddirect_arrows	{1}
+option anim_methodcalls	{1}
+option methodcalls_delay	{200}
+option animation_msgnames	{1}
+option animation_msgclassnames	{1}
+option animation_msgcolors	{1}
+option penguin_mode	{0}
+option showlayouting	{0}
+option bubbles	{1}
+option animation_speed	{3}
+option bkpts_enabled	{1}
+option expressmode_autoupdate	{1}
+config mainwin-geom	{1097x775+84+252}
+config rununtil-event	{}
+config last-nedfile	{}
+config filtobjlist-category	{amqpcsgvo}
+config display-timeline	{1}
+config filtobjlist-maxcount	{100000}
+config log-save-filename	{omnetpp.out}
+config editor-findstring	{SCN_RSP}
+config rununtil-time	{1}
+config dontshow	{}
+config editor-regexp	{0}
+config filtobjlist-class	{}
+config rununtil-mode	{Express (tracing off)}
+config filtobjlist-name	{*localMobilestationInfo.Primary_Management_CID*}
+config confirm-exit	{1}
+config editor-backwards	{1}
+config display-treeview	{1}
+config timeline-maxnumevents	{1000}
+config editor-case-sensitive	{1}
+config editor-whole-words	{0}
+config filtobjlist-order	{Class}
+inspector "qos_network.ms01.wimax.controlPlane" "ControlPlaneMobilestationCompound" "2" "317x319+46+108"
+inspector "qos_network.ms01.wimax.controlPlane.cp_mobilestation.receiverSnrVector" "cOutVector" "2" "603x324+622+42"
+inspector "qos_network.ms01.wimax.msTransceiver.cpsTransceiver" "CommonPartSublayerTransceiverCompound" "2" "356x397+898+57"
+inspector "qos_network" "QoSNetwork" "2" "491x521+400+351"
+inspector "qos_network.bs1" "WiMAXAP" "2" "621x443+652+497"
+inspector "qos_network.bs1.wimax" "Ieee80216NicAP" "2" "433x591+0+349"
+inspector "qos_network.bs1.wimax.bsReceiver.cpsReceiver" "CommonPartSublayerReceiverCompound" "2" "672x319+0+621"
+inspector "simulation.scheduled-events.." "Ieee80216PackingSubHeader" "1" "818x497+0+27"
+inspector "qos_network.ms04.wimax.msTransceiver.cpsTransceiver" "CommonPartSublayerTransceiverCompound" "2" "361x397+916+82"
+inspector "qos_network.ms06.wimax.msTransceiver.cpsTransceiver" "CommonPartSublayerTransceiverCompound" "2" "356x397+410+607"
+inspector "qos_network.ms03.wimax.msTransceiver.cpsTransceiver" "CommonPartSublayerTransceiverCompound" "2" "390x397+879+597"
+inspector "qos_network.ms05.wimax.msTransceiver.cpsTransceiver" "CommonPartSublayerTransceiverCompound" "2" "358x397+847+551"
+inspector "qos_network.bs1.wimax.controlPlane.?è" "CommonPartSublayerAuthorizationModule" "1" "648x315+0+27"
+inspector "qos_network.ms02.wimax.msTransceiver.cpsTransceiver" "CommonPartSublayerTransceiverCompound" "2" "297x397+1305+70"
+inspector "qos_network.bs1.wimax.controlPlane." "CommonPartSublayerServiceFlows_BS" "3" "739x539+0+27"
+

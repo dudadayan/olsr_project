@@ -1,0 +1,3 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "Net80211_aodv" "Net80211_aodv" "2" "671x433+754+166:normal"
+
