@@ -1160,6 +1160,21 @@ double ManetRoutingBase::getDirection()
     return angle;
 }
 
+double ManetRoutingBase::getAngle()
+{
+    if (!regPosition)
+        error("this node doesn't have activated the register position");
+    double x =  xPosition-xPositionPrev;
+    double y =  yPosition-yPositionPrev;
+    double angle = atan(-y/x);
+    angle = angle*180/3.14159265;
+    if (x < 0)
+        angle += 180;
+    if (angle < 0)
+        angle += 360;
+    return angle;
+}
+
 void ManetRoutingBase::setInternalStore(bool i)
 {
     createInternalStore=i;

@@ -497,7 +497,8 @@ class OLSR : public ManetRoutingBase
     void        nb_loss(OLSR_link_tuple*);
     void        add_dup_tuple(OLSR_dup_tuple*);
     void        rm_dup_tuple(OLSR_dup_tuple*);
-    void        add_link_tuple(OLSR_link_tuple*, uint8_t);
+    //void        add_link_tuple(OLSR_link_tuple*, uint8_t);
+    void        add_link_tuple(OLSR_link_tuple* tuple, uint8_t  willingness, uint16_t pos_x, uint16_t pos_y, uint16_t angle, uint8_t speed, uint8_t battery);
     void        rm_link_tuple(OLSR_link_tuple*);
     void        updated_link_tuple(OLSR_link_tuple*);
     void        add_nb_tuple(OLSR_nb_tuple*);

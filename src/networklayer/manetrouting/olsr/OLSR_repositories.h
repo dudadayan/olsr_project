@@ -171,13 +171,13 @@ typedef struct OLSR_nb_tuple : public cObject
 
     uint16_t pos_y;
 
-    uint8_t speed;
+    uint8_t speed_;
 
-    uint8_t angle;
+    uint8_t angle_;
 
-    uint8_t battery;
+    uint8_t battery_;
 
-    double      update_time;
+    double      update_time_;
 
     //cMessage *asocTimer;
     cObject *asocTimer;
@@ -187,15 +187,12 @@ typedef struct OLSR_nb_tuple : public cObject
 
     inline uint8_t& getStatus() { return status_; }
     inline uint8_t& willingness()   { return willingness_; }
-    inline uint16_t& getPosX() { return pos_x; }
-    void             setPosX(uint16_t posx) { pos_x = posx; }
-    inline uint16_t& getPosY() { return pos_y; }
-    void             setPosY(uint16_t posy) { pos_y = posy; }
-    inline uint8_t& getAngle() { return angle; }
-    inline uint8_t& getSpeed() { return speed; }
-    inline uint8_t& getBattery() { return battery; }
-    inline double&      getUpdateTime()      { return update_time; }
-    void                setUpdateTime(double time)      { update_time = time; }
+    inline uint16_t& posX() { return pos_x; }
+    inline uint16_t& posY() { return pos_y; }
+    inline uint8_t& angle() { return angle_; }
+    inline uint8_t& speed() { return speed_; }
+    inline uint8_t& battery() { return battery_; }
+    inline double&      updateTime()      { return update_time_; }
 
     OLSR_nb_tuple () {asocTimer = NULL;}
     OLSR_nb_tuple (OLSR_nb_tuple * e)
@@ -226,27 +223,24 @@ typedef struct OLSR_nb2hop_tuple : public cObject
 
     uint16_t pos_y;
 
-    uint8_t speed;
+    uint8_t speed_;
 
-    uint8_t angle;
+    uint8_t angle_;
 
-    double      update_time;
+    double      update_time_;
 
     inline nsaddr_t & nb_main_addr()    { return nb_main_addr_; }
     inline nsaddr_t & nb2hop_addr() { return nb2hop_addr_; }
     void    setNb_main_addr(const nsaddr_t &a)  { nb_main_addr_=a; }
     void    setNb2hop_addr(const nsaddr_t &a)   { nb2hop_addr_=a; }
-    inline uint16_t& getPosX() { return pos_x; }
-    void             setPosX(uint16_t posx) { pos_x = posx; }
-    inline uint16_t& getPosY() { return pos_y; }
-    void             setPosY(uint16_t posy) { pos_y = posy; }
-    inline uint8_t& getAngle() { return angle; }
-    inline uint8_t& getSpeed() { return speed; }
+    inline uint16_t& posX() { return pos_x; }
+    inline uint16_t& posY() { return pos_y; }
+    inline uint8_t& angle() { return angle_; }
+    inline uint8_t& speed() { return speed_; }
 
     inline double&      time()      { return time_; }
 
-    inline double&      getUpdateTime()      { return update_time; }
-    void                setUpdateTime(double time)      { update_time = time; }
+    inline double&      updateTime()      { return update_time_; }
 
     OLSR_nb2hop_tuple() {asocTimer = NULL;}
     OLSR_nb2hop_tuple (OLSR_nb2hop_tuple * e)

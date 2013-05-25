@@ -91,15 +91,15 @@ typedef struct OLSR_hello_node {
 
     uint16_t pos_y;
 
-    uint8_t angle;
+    uint16_t angle_;
 
-    uint8_t speed; //mps
+    uint8_t speed_; //mps
 
     inline nsaddr_t& nb_iface_addr() { return nb_iface_addrs_; }
-    inline uint16_t& getPosX() { return pos_x; }
-    inline uint16_t& getPosY() { return pos_y; }
-    inline uint8_t& getAngle() { return angle; }
-    inline uint8_t& getSpeed() { return speed; }
+    inline uint16_t& posX() { return pos_x; }
+    inline uint16_t& posY() { return pos_y; }
+    inline uint16_t& angle() { return angle_; }
+    inline uint8_t& speed() { return speed_; }
 
 } OLSR_hello_node;
 
@@ -147,11 +147,11 @@ typedef struct OLSR_hello :cPolymorphic {
 
     uint16_t pos_y;
 
-    uint8_t angle;
+    uint16_t angle_;
 
-    uint8_t speed; //mps
+    uint8_t speed_; //mps
 
-    uint8_t battery;
+    uint8_t battery_;
 
     OLSR_hello_msg	hello_body_[OLSR_MAX_HELLOS];
 
@@ -161,11 +161,11 @@ typedef struct OLSR_hello :cPolymorphic {
     inline uint8_t&	htime()			{ return htime_; }
     inline uint8_t&	willingness()		{ return willingness_; }
     inline OLSR_hello_msg&	hello_msg(int i)	{ return hello_body_[i]; }
-    inline uint16_t& getPosX() { return pos_x; }
-    inline uint16_t& getPosY() { return pos_y; }
-    inline uint8_t& getAngle() { return angle; }
-    inline uint8_t& getSpeed() { return speed; }
-    inline uint8_t& getBattery() { return battery; }
+    inline uint16_t& posX() { return pos_x; }
+    inline uint16_t& posY() { return pos_y; }
+    inline uint16_t& angle() { return angle_; }
+    inline uint8_t& speed() { return speed_; }
+    inline uint8_t& battery() { return battery_; }
 
 
     inline uint32_t size() {
