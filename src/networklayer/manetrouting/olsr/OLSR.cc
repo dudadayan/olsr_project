@@ -50,6 +50,9 @@
 #define RT_PORT 698
 #define IP_DEF_TTL 32
 
+#define MAX_RANGE 250.0
+#define BATTERY_THRESHOLD 10
+
 
 #define state_      (*state_ptr)
 
@@ -718,6 +721,50 @@ OLSR::recv_olsr(cMessage* msg)
     rtable_computation();
 }
 
+double
+OLSR::distance_to_1hop(OLSR_nb_tuple *N)
+{
+    double distance = sqrt(pow(N->posX()-getXPos(),2) + pow(N->posY()-getYPos(),2));
+    EV << "distance " << distance << endl;
+    return distance;
+}
+
+void
+OLSR::update_position_1hop(OLSR_nb_tuple *N)
+{
+    double diff_time = SIMTIME_DBL(simTime()) - N->updateTime();
+    N->posX() += N->speed() * cos(N->angle()) * diff_time;
+    N->posY() += N->speed() * sin(N->angle()) * diff_time;
+    N->updateTime() = SIMTIME_DBL(simTime());
+}
+
+double
+OLSR::distance(OLSR_nb_tuple* N, OLSR_nb2hop_tuple* N2)
+{
+    return sqrt(pow(N->posX()-N2->posX(),2) + pow(N->posY()-N2->posY(),2));
+}
+
+void
+OLSR::update_position_2hop(OLSR_nb2hop_tuple *N)
+{
+    double diff_time = SIMTIME_DBL(simTime()) - N->updateTime();
+    N->posX() += N->speed() * cos(N->angle()) * diff_time;
+    N->posY() += N->speed() * sin(N->angle()) * diff_time;
+    N->updateTime() = SIMTIME_DBL(simTime());
+}
+
+bool
+OLSR::found_in_nbset(nbset_t* N, OLSR_nb_tuple* tuple)
+{
+    for (nbset_t::iterator it = N->begin(); it != N->end(); it++)
+    {
+        OLSR_nb_tuple *tuple1 = *it;
+        if (tuple1->nb_main_addr() == tuple->nb_main_addr())
+            return true;
+    }
+    return false;
+}
+
 ///
 /// \brief Computates MPR set of a node following RFC 3626 hints.
 ///
@@ -731,15 +778,28 @@ OLSR::mpr_computation()
     state_.clear_mprset();
 
     nbset_t N; nb2hopset_t N2;
+
+    // CALCULATE N1
     // N is the subset of neighbors of the node, which are
     // neighbor "of the interface I"
     for (nbset_t::iterator it = nbset().begin(); it != nbset().end(); it++)
         if ((*it)->getStatus() == OLSR_STATUS_SYM) // I think that we need this check
-            N.push_back(*it);
+        {
+            OLSR_nb_tuple *nb_tuple = *it;
+            EV << "Xpos: " << (*nb_tuple).posX() << " Ypos: " << (*nb_tuple).posY() << endl;
+            update_position_1hop(nb_tuple);
+            EV << "Updated Xpos: " << (*nb_tuple).posX() << " Updated Ypos: " << (*nb_tuple).posY() << endl;
+            //check in n1 is in our range
+            if (distance_to_1hop(nb_tuple) < MAX_RANGE)
+                N.push_back(nb_tuple);
+            //else
+            //rm_nb_tuple(nb_tuple);
+        }
 
+    // CALCULATE N2
     // N2 is the set of 2-hop neighbors reachable from "the interface
     // I", excluding:
-    // (i)   the nodes only reachable by members of N with willingness WILL_NEVER
+    // (i)   check if n2 is in range of n1
     // (ii)  the node performing the computation
     // (iii) all the symmetric neighbors: the nodes for which there exists a symmetric
     //       link to this node on some interface.
@@ -748,34 +808,53 @@ OLSR::mpr_computation()
         OLSR_nb2hop_tuple* nb2hop_tuple = *it;
         bool ok = true;
 
+        //
         OLSR_nb_tuple* nb_tuple = state_.find_sym_nb_tuple(nb2hop_tuple->nb_main_addr());
-        if (nb_tuple == NULL)
+        if (nb_tuple == NULL || !found_in_nbset(&N, nb_tuple))
             ok = false;
         else
         {
-            nb_tuple = state_.find_nb_tuple(nb2hop_tuple->nb_main_addr(), OLSR_WILL_NEVER);
-            if (nb_tuple != NULL)
-                ok = false;
-            else
+
+            bool found = false;
+            for (nbset_t::iterator it2 = N.begin(); it2 != N.end(); it2++)
+            {
+                OLSR_nb_tuple* nb_tuple1 = *it2;
+                if (nb_tuple1->nb_main_addr() == nb2hop_tuple->nb_main_addr())
+                {
+                    found = true;
+                    if (distance(nb_tuple1, nb2hop_tuple) > MAX_RANGE)
+                    {
+                        ok = false;
+                    }
+                }
+            }
+
+
+            if (found)
             {
                 nb_tuple = state_.find_sym_nb_tuple(nb2hop_tuple->nb2hop_addr());
-                if (nb_tuple != NULL)
+                if (nb_tuple != NULL && found_in_nbset(&N, nb_tuple))
                     ok = false;
             }
+            else
+            {
+                ok = false;
+            }
         }
-
         if (ok)
             N2.push_back(nb2hop_tuple);
     }
 
     // 1. Start with an MPR set made of all members of N with
     // N_willingness equal to WILL_ALWAYS
+    /*
     for (nbset_t::iterator it = N.begin(); it != N.end(); it++)
     {
         OLSR_nb_tuple* nb_tuple = *it;
         if (nb_tuple->willingness() == OLSR_WILL_ALWAYS)
             state_.insert_mpr_addr(nb_tuple->nb_main_addr());
     }
+     */
 
     // 2. Calculate D(y), where y is a member of N, for all nodes in N.
     // We will do this later.
@@ -783,6 +862,7 @@ OLSR::mpr_computation()
     // 3. Add to the MPR set those nodes in N, which are the *only*
     // nodes to provide reachability to a node in N2. Remove the
     // nodes from N2 which are now covered by a node in the MPR set.
+    step3:
     mprset_t foundset;
     std::set<nsaddr_t> deleted_addrs;
     for (nb2hopset_t::iterator it = N2.begin(); it != N2.end();)
@@ -790,6 +870,7 @@ OLSR::mpr_computation()
         increment = true;
         OLSR_nb2hop_tuple* nb2hop_tuple1 = *it;
 
+        // if n2 is already cover by MPR
         mprset_t::iterator pos = foundset.find(nb2hop_tuple1->nb2hop_addr());
         if (pos != foundset.end())
         {
@@ -797,6 +878,7 @@ OLSR::mpr_computation()
             continue;
         }
 
+        // find n1 address connected to n2
         bool found = false;
         for (nbset_t::iterator it2 = N.begin(); it2 != N.end(); it2++)
         {
@@ -807,11 +889,14 @@ OLSR::mpr_computation()
             }
         }
 
+        // if no n1, nothing to do, skip n2 node
         if (!found)
         {
             it++;
             continue;
         }
+
+        /////
 
         found = false;
 
@@ -826,6 +911,7 @@ OLSR::mpr_computation()
             }
         }
 
+        // delete all n2 connected to MPR
         if (!found)
         {
             state_.insert_mpr_addr(nb2hop_tuple1->nb_main_addr());
@@ -847,6 +933,7 @@ OLSR::mpr_computation()
             increment = false;
         }
 
+        // delete all n2 already cover by MPR
         for (std::set<nsaddr_t>::iterator it2 = deleted_addrs.begin();
                 it2 != deleted_addrs.end();
                 it2++)
@@ -871,104 +958,93 @@ OLSR::mpr_computation()
             it++;
     }
 
-    // 4. While there exist nodes in N2 which are not covered by at
-    // least one node in the MPR set:
-    while (N2.begin() != N2.end())
+
+
+    /// delete N1 node with lowest battery
+    if (N2.begin() != N2.end())
     {
-        // 4.1. For each node in N, calculate the reachability, i.e., the
-        // number of nodes in N2 which are not yet covered by at
-        // least one node in the MPR set, and which are reachable
-        // through this 1-hop neighbor
-        std::map<int, std::vector<OLSR_nb_tuple*> > reachability;
-        std::set<int> rs;
+        int minimum = 256;
         for (nbset_t::iterator it = N.begin(); it != N.end(); it++)
         {
             OLSR_nb_tuple* nb_tuple = *it;
-            int r = 0;
-            for (nb2hopset_t::iterator it2 = N2.begin(); it2 != N2.end(); it2++)
-            {
-                OLSR_nb2hop_tuple* nb2hop_tuple = *it2;
-                if (nb_tuple->nb_main_addr() == nb2hop_tuple->nb_main_addr())
-                    r++;
-            }
-            rs.insert(r);
-            reachability[r].push_back(nb_tuple);
+            if (nb_tuple->battery() < minimum)
+                minimum = nb_tuple->battery();
         }
 
-        // 4.2. Select as a MPR the node with highest N_willingness among
-        // the nodes in N with non-zero reachability. In case of
-        // multiple choice select the node which provides
-        // reachability to the maximum number of nodes in N2. In
-        // case of multiple nodes providing the same amount of
-        // reachability, select the node as MPR whose D(y) is
-        // greater. Remove the nodes from N2 which are now covered
-        // by a node in the MPR set.
-        OLSR_nb_tuple* max = NULL;
-        int max_r = 0;
-        for (std::set<int>::iterator it = rs.begin(); it != rs.end(); it++)
+        nbset_t low_battery_set;
+        for (nbset_t::iterator it = N.begin(); it != N.end(); it++)
         {
-            int r = *it;
-            if (r > 0)
+            OLSR_nb_tuple* nb_tuple = *it;
+            if (nb_tuple->battery() < minimum + BATTERY_THRESHOLD)
             {
-                for (std::vector<OLSR_nb_tuple*>::iterator it2 = reachability[r].begin();
-                        it2 != reachability[r].end();
-                        it2++)
+                low_battery_set.push_back(nb_tuple);
+            }
+        }
+
+        OLSR_nb_tuple* nb_tuple_to_delete = NULL;
+        if (low_battery_set.size() == 1)
+        {
+            nb_tuple_to_delete = low_battery_set.front();
+        }
+        else
+        {
+            for (nbset_t::iterator it = low_battery_set.begin(); it != low_battery_set.end(); it++)
+            {
+                OLSR_nb_tuple* nb_tuple = *it;
+
+                int r = 0;
+                int min = 10000000;
+                for (nb2hopset_t::iterator it2 = N2.begin(); it2 != N2.end(); it2++)
                 {
-                    OLSR_nb_tuple* nb_tuple = *it2;
-                    if (max == NULL || nb_tuple->willingness() > max->willingness())
+                    OLSR_nb2hop_tuple* nb2hop_tuple = *it2;
+                    if (nb_tuple->nb_main_addr() == nb2hop_tuple->nb_main_addr())
+                        r++;
+                }
+                if (r <= min)
+                {
+                    if (r<min)
                     {
-                        max = nb_tuple;
-                        max_r = r;
+                        min = r;
+                        nb_tuple_to_delete = nb_tuple;
                     }
-                    else if (nb_tuple->willingness() == max->willingness())
+                    else
                     {
-                        if (r > max_r)
-                        {
-                            max = nb_tuple;
-                            max_r = r;
-                        }
-                        else if (r == max_r)
-                        {
-                            if (degree(nb_tuple) > degree(max))
-                            {
-                                max = nb_tuple;
-                                max_r = r;
-                            }
-                        }
+                        if (nb_tuple_to_delete->battery() > nb_tuple->battery())
+                            nb_tuple_to_delete = nb_tuple;
                     }
                 }
             }
         }
-        if (max != NULL)
+
+        for (nb2hopset_t::iterator it = N2.begin(); it != N2.end();)
         {
-            state_.insert_mpr_addr(max->nb_main_addr());
-            std::set<nsaddr_t> nb2hop_addrs;
-            for (nb2hopset_t::iterator it = N2.begin(); it != N2.end(); )
+            OLSR_nb2hop_tuple* nb2hop_tuple = *it;
+            if (nb_tuple_to_delete->nb_main_addr() == nb2hop_tuple->nb_main_addr())
+                //it = N2.erase(it);
             {
-                OLSR_nb2hop_tuple* nb2hop_tuple = *it;
-                if (nb2hop_tuple->nb_main_addr() == max->nb_main_addr())
-                {
-                    nb2hop_addrs.insert(nb2hop_tuple->nb2hop_addr());
-                    it = N2.erase(it);
-                }
-                else
-                    it++;
+                N2.erase(it);
+                it = N2.begin();
 
             }
-            for (nb2hopset_t::iterator it = N2.begin(); it != N2.end();)
-            {
-                OLSR_nb2hop_tuple* nb2hop_tuple = *it;
-                std::set<nsaddr_t>::iterator it2 =
-                        nb2hop_addrs.find(nb2hop_tuple->nb2hop_addr());
-                if (it2 != nb2hop_addrs.end())
-                {
-                    it = N2.erase(it);
-                }
-                else
-                    it++;
-
-            }
+            else
+                it++;
         }
+
+
+        for (nbset_t::iterator it = N.begin(); it != N.end();)
+        {
+            OLSR_nb_tuple* nb_tuple = *it;
+            if (nb_tuple_to_delete->nb_main_addr() == nb_tuple->nb_main_addr())
+            {
+                it = N.erase(it);
+                //it = N.begin();
+                break;
+            }
+            else
+                it++;
+        }
+        if (N2.begin() != N2.end())
+            goto step3;
     }
 }
 
@@ -984,68 +1060,80 @@ OLSR::rtable_computation()
 
     // 2. The new routing entries are added starting with the
     // symmetric neighbors (h=1) as the destination nodes.
+    nbset_t nb_not_in_range;
     for (nbset_t::iterator it = nbset().begin(); it != nbset().end(); it++)
     {
         OLSR_nb_tuple* nb_tuple = *it;
-        if (nb_tuple->getStatus() == OLSR_STATUS_SYM)
+        update_position_1hop(nb_tuple);
+        if (distance_to_1hop(nb_tuple) < MAX_RANGE)
         {
-            bool nb_main_addr = false;
-            OLSR_link_tuple* lt = NULL;
-            for (linkset_t::iterator it2 = linkset().begin(); it2 != linkset().end(); it2++)
+            if (nb_tuple->getStatus() == OLSR_STATUS_SYM)
             {
-                OLSR_link_tuple* link_tuple = *it2;
-                if (get_main_addr(link_tuple->nb_iface_addr()) == nb_tuple->nb_main_addr() && link_tuple->time() >= CURRENT_TIME)
+                bool nb_main_addr = false;
+                OLSR_link_tuple* lt = NULL;
+                for (linkset_t::iterator it2 = linkset().begin(); it2 != linkset().end(); it2++)
                 {
-                    lt = link_tuple;
-                    rtable_.add_entry(link_tuple->nb_iface_addr(),
-                            link_tuple->nb_iface_addr(),
-                            link_tuple->local_iface_addr(),
-                            1,link_tuple->local_iface_index());
+                    OLSR_link_tuple* link_tuple = *it2;
+                    if (get_main_addr(link_tuple->nb_iface_addr()) == nb_tuple->nb_main_addr() && link_tuple->time() >= CURRENT_TIME)
+                    {
+                        lt = link_tuple;
+                        rtable_.add_entry(link_tuple->nb_iface_addr(),
+                                link_tuple->nb_iface_addr(),
+                                link_tuple->local_iface_addr(),
+                                1,link_tuple->local_iface_index());
+                        nsaddr_t nm = IPAddress::ALLONES_ADDRESS;
+                        if (!useIndex)
+                            omnet_chg_rte (link_tuple->nb_iface_addr(),
+                                    link_tuple->nb_iface_addr(),
+                                    nm,
+                                    1,false,link_tuple->local_iface_addr());
+                        else
+                            omnet_chg_rte (link_tuple->nb_iface_addr(),
+                                    link_tuple->nb_iface_addr(),
+                                    nm,
+                                    1,false,link_tuple->local_iface_index());
+
+                        if (link_tuple->nb_iface_addr() == nb_tuple->nb_main_addr())
+                            nb_main_addr = true;
+                    }
+                }
+                if (!nb_main_addr && lt != NULL)
+                {
+                    rtable_.add_entry(nb_tuple->nb_main_addr(),
+                            lt->nb_iface_addr(),
+                            lt->local_iface_addr(),
+                            1,lt->local_iface_index());
                     nsaddr_t nm = IPAddress::ALLONES_ADDRESS;
                     if (!useIndex)
-                        omnet_chg_rte (link_tuple->nb_iface_addr(),
-                                link_tuple->nb_iface_addr(),
-                                nm,
-                                1,false,link_tuple->local_iface_addr());
-                    else
-                        omnet_chg_rte (link_tuple->nb_iface_addr(),
-                                link_tuple->nb_iface_addr(),
-                                nm,
-                                1,false,link_tuple->local_iface_index());
+                        omnet_chg_rte (nb_tuple->nb_main_addr(),
+                                lt->nb_iface_addr(),
+                                nm,// Default mask
+                                1,false,lt->local_iface_addr());
 
-                    if (link_tuple->nb_iface_addr() == nb_tuple->nb_main_addr())
-                        nb_main_addr = true;
+                    else
+                        omnet_chg_rte (nb_tuple->nb_main_addr(),
+                                lt->nb_iface_addr(),
+                                nm,// Default mask
+                                1,false,lt->local_iface_index());
                 }
             }
-            if (!nb_main_addr && lt != NULL)
-            {
-                rtable_.add_entry(nb_tuple->nb_main_addr(),
-                        lt->nb_iface_addr(),
-                        lt->local_iface_addr(),
-                        1,lt->local_iface_index());
-                nsaddr_t nm = IPAddress::ALLONES_ADDRESS;
-                if (!useIndex)
-                    omnet_chg_rte (nb_tuple->nb_main_addr(),
-                            lt->nb_iface_addr(),
-                            nm,// Default mask
-                            1,false,lt->local_iface_addr());
-
-                else
-                    omnet_chg_rte (nb_tuple->nb_main_addr(),
-                            lt->nb_iface_addr(),
-                            nm,// Default mask
-                            1,false,lt->local_iface_index());
-            }
         }
+        else
+            nb_not_in_range.push_back(nb_tuple);
     }
 
+
+
     // N2 is the set of 2-hop neighbors reachable from this node, excluding:
-    // (i)   the nodes only reachable by members of N with willingness WILL_NEVER
+    // (i)
     // (ii)  the node performing the computation
     // (iii) all the symmetric neighbors: the nodes for which there exists a symmetric
     //       link to this node on some interface.
+
     for (nb2hopset_t::iterator it = nb2hopset().begin(); it != nb2hopset().end(); it++)
     {
+        nb2hopset_t n2_reachabilty;
+        n2_reachabilty.clear();
         OLSR_nb2hop_tuple* nb2hop_tuple = *it;
         bool ok = true;
         OLSR_nb_tuple* nb_tuple = state_.find_sym_nb_tuple(nb2hop_tuple->nb_main_addr());
@@ -1053,39 +1141,61 @@ OLSR::rtable_computation()
             ok = false;
         else
         {
-            nb_tuple = state_.find_nb_tuple(nb2hop_tuple->nb_main_addr(), OLSR_WILL_NEVER);
+            nb_tuple = state_.find_sym_nb_tuple(nb2hop_tuple->nb2hop_addr());
             if (nb_tuple != NULL)
                 ok = false;
-            else
-            {
-                nb_tuple = state_.find_sym_nb_tuple(nb2hop_tuple->nb2hop_addr());
-                if (nb_tuple != NULL)
-                    ok = false;
-            }
         }
 
         // 3. For each node in N2 create a new entry in the routing table
-        if (ok)
+        if (ok && rtable_.lookup(nb2hop_tuple->nb2hop_addr()) == NULL)
         {
-            OLSR_rt_entry* entry = rtable_.lookup(nb2hop_tuple->nb_main_addr());
-            assert(entry != NULL);
-            rtable_.add_entry(nb2hop_tuple->nb2hop_addr(),
-                    entry->next_addr(),
-                    entry->iface_addr(),
-                    2,entry->local_iface_index());
-            nsaddr_t nm = IPAddress::ALLONES_ADDRESS;
-            if (!useIndex)
-                omnet_chg_rte (nb2hop_tuple->nb2hop_addr(),
-                        entry->next_addr(),
-                        nm,
-                        2,false,entry->iface_addr());
+            n2_reachabilty.push_back(nb2hop_tuple);
+            for (nb2hopset_t::iterator it2 = it + 1; it2 != nb2hopset().end(); it2++)
+            {
+                OLSR_nb2hop_tuple* nb2hop_tuple2 = *it2;
+                if (nb2hop_tuple->nb2hop_addr() == nb2hop_tuple2->nb2hop_addr() && nb2hop_tuple->nb_main_addr() != nb2hop_tuple2->nb_main_addr())
+                    n2_reachabilty.push_back(nb2hop_tuple2);
+            }
 
-            else
-                omnet_chg_rte (nb2hop_tuple->nb2hop_addr(),
-                        entry->next_addr(),
-                        nm,
-                        2,false,entry->local_iface_index());
+            OLSR_nb_tuple* nb_max_battery = NULL;
+            for (nb2hopset_t::iterator it2 = n2_reachabilty.begin(); it2 != n2_reachabilty.end(); it2++)
+            {
+                uint8_t max_battery = 0;
+                OLSR_nb2hop_tuple* nb2hop_tuple2 = *it2;
+                for (nbset_t::iterator it3 = nbset().begin(); it3 != nbset().end(); it3++)
+                {
+                    OLSR_nb_tuple* nb_tuple2 = *it3;
+                    if (nb2hop_tuple2->nb_main_addr() == nb_tuple2->nb_main_addr() && nb_tuple2->battery() > max_battery && distance_to_1hop(nb_tuple2) < MAX_RANGE)
+                    {
 
+                        max_battery = nb_tuple2->battery();
+                        nb_max_battery = nb_tuple2;
+                    }
+                }
+            }
+
+            if (nb_max_battery != NULL)
+            {
+                OLSR_rt_entry* entry = rtable_.lookup(nb_max_battery->nb_main_addr());
+                assert(entry != NULL);
+
+                rtable_.add_entry(nb2hop_tuple->nb2hop_addr(),
+                        entry->next_addr(),
+                        entry->iface_addr(),
+                        2,entry->local_iface_index());
+                nsaddr_t nm = IPAddress::ALLONES_ADDRESS;
+                if (!useIndex)
+                    omnet_chg_rte (nb2hop_tuple->nb2hop_addr(),
+                            entry->next_addr(),
+                            nm,
+                            2,false,entry->iface_addr());
+
+                else
+                    omnet_chg_rte (nb2hop_tuple->nb2hop_addr(),
+                            entry->next_addr(),
+                            nm,
+                            2,false,entry->local_iface_index());
+            }
         }
     }
 

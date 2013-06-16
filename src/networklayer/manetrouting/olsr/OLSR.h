@@ -511,6 +511,12 @@ class OLSR : public ManetRoutingBase
     void        rm_topology_tuple(OLSR_topology_tuple*);
     void        add_ifaceassoc_tuple(OLSR_iface_assoc_tuple*);
     void        rm_ifaceassoc_tuple(OLSR_iface_assoc_tuple*);
+    //NEW NEW NEW
+    double      distance_to_1hop(OLSR_nb_tuple*);
+    void        update_position_1hop(OLSR_nb_tuple*);
+    double      distance(OLSR_nb_tuple* N, OLSR_nb2hop_tuple* N2);
+    void        update_position_2hop(OLSR_nb2hop_tuple *N);
+    bool        found_in_nbset(nbset_t* N, OLSR_nb_tuple* tuple);
 
     const nsaddr_t  & get_main_addr(const nsaddr_t&) const;
     int     degree(OLSR_nb_tuple*);
