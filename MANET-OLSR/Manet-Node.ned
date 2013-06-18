@@ -23,6 +23,7 @@ import inet.linklayer.ieee80211.Ieee80211gNicAdhoc;
 import inet.networklayer.manetrouting.ManetRouting;
 import inet.mobility.BasicMobility;
 import inet.mobility.NullMobility;
+import inet.battery.*;
 
 module Manet_Node
 {
@@ -49,6 +50,11 @@ module Manet_Node
             parameters:
                 @display("p=60,307;i=block/blackboard");
         }
+        battery: InetSimpleBattery
+		{    
+    		parameters:
+    		    @display("p=60,400;i=block/control");
+		}
         interfaceTable: InterfaceTable {
             parameters:
                 @display("p=60,150;i=block/table");
@@ -62,11 +68,11 @@ module Manet_Node
         }
         udpApp[numUdpApps]: <udpAppType> like UDPApp {
             parameters:
-                @display("i=block/app;p=272,67");
+                @display("i=block/app;p=248,67");
         }
         udp: UDP {
             parameters:
-                @display("p=272,154;i=block/transport");
+                @display("p=248,154;i=block/transport");
         }
         networkLayer: NetworkLayerGlobalArp {
             parameters:
@@ -96,7 +102,7 @@ module Manet_Node
 //        }
         mobility: <mobilityType> like BasicMobility {
             parameters:
-                @display("p=149,307;i=block/cogwheel");
+                @display("p=149,384;i=block/cogwheel");
                 //@display("p=149,307");
         }
     connections allowunconnected:

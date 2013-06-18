@@ -46,6 +46,7 @@ class INET_API InetSimpleBattery : public BasicBattery
         int     numAccts;
         double  *accts;
         simtime_t   *times;
+
         DeviceEntry()
         {
             currentState = 0;
@@ -73,6 +74,7 @@ class INET_API InetSimpleBattery : public BasicBattery
     virtual int numInitStages   () const {return 2;}
     virtual void    finish();
     virtual void handleMessage(cMessage *msg);
+
     /**
      * @brief Registers a power draining device with this battery.
      *
@@ -106,11 +108,13 @@ class INET_API InetSimpleBattery : public BasicBattery
     double estimateResidualRelative();
     /** @brief current state of charge of the battery (mW-s) */
     double estimateResidualAbs();
+    virtual void updateDisplayString();
 
   protected:
 
     cOutVector residualVec;
     cOutVector* mCurrEnergy;
+    simsignal_t resedual_battery;
 
     enum msgType
     {

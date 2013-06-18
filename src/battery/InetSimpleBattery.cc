@@ -30,7 +30,7 @@ Define_Module(InetSimpleBattery);
 
 void InetSimpleBattery::initialize(int stage)
 {
-
+    resedual_battery = registerSignal("batteryState");
     BasicBattery::initialize(stage); //DO NOT DELETE!!
     if (stage == 0)
     {
@@ -79,7 +79,8 @@ void InetSimpleBattery::initialize(int stage)
         if (par("ConsumedVector"))
             mCurrEnergy = new cOutVector("Consumed");
         // DISable by default (use BatteryStats for data collection)
-        residualVec.disable();
+        //residualVec.disable();
+        residualVec.enable();
 
         residualVec.setName("residualCapacity");
         residualVec.record(residualCapacity);
@@ -306,6 +307,17 @@ InetSimpleBattery::~InetSimpleBattery()
         delete mCurrEnergy;
 }
 
+void InetSimpleBattery::updateDisplayString()
+{
+    if (!ev.isGUI())
+        return;
+
+    char buf[80];
+    sprintf(buf, "%.2f", lastPublishCapacity);
+    getDisplayString().setTagArg("t",0,buf);
+    emit(resedual_battery, lastPublishCapacity);
+}
+
 
 void InetSimpleBattery::deductAndCheck()
 {
@@ -390,4 +402,5 @@ void InetSimpleBattery::deductAndCheck()
     residualVec.record(residualCapacity);
     if (mCurrEnergy)
         mCurrEnergy->record(capacity-residualCapacity);
+    updateDisplayString();
 }

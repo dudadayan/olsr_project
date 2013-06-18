@@ -112,7 +112,7 @@ class INET_API BasicBattery : public cSimpleModule, public INotifiable
     double nominalCapmAh;
     double voltage;
 
-    bool mustSubscribe;
+    bool mustSubscribe = true;
     // debit battery at least once every resolution seconds
     simtime_t resolution;
     cMessage *timeout;

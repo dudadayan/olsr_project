@@ -1,6 +1,5 @@
 # Partial Tkenv config file -- see $HOME/.tkenvrc as well
 inspector ".OLSR Pkt" "IPDatagram" "1" "460x314+0+24:normal"
-inspector "simulation.scheduled-events.wlan-rts" "AirFrameExtended" "1" "482x314+0+24:normal"
-inspector "Manet_Network.host[0].mobility" "NullMobility" "1" "492x314+252+412:normal"
 inspector "Manet_Network.host[8].mobility" "NullMobility" "1" "498x314+304+157:normal"
+inspector "Manet_Network.host[0].mobility" "NullMobility" "1" "492x314+252+412:normal"
 

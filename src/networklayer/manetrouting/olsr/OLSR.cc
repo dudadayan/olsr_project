@@ -1165,7 +1165,7 @@ OLSR::rtable_computation()
                 for (nbset_t::iterator it3 = nbset().begin(); it3 != nbset().end(); it3++)
                 {
                     OLSR_nb_tuple* nb_tuple2 = *it3;
-                    if (nb2hop_tuple2->nb_main_addr() == nb_tuple2->nb_main_addr() && nb_tuple2->battery() > max_battery && distance_to_1hop(nb_tuple2) < MAX_RANGE)
+                    if (nb2hop_tuple2->nb_main_addr() == nb_tuple2->nb_main_addr() && rtable_.lookup(nb_tuple2->nb_main_addr())!=NULL && nb_tuple2->battery() > max_battery && distance_to_1hop(nb_tuple2) < MAX_RANGE)
                     {
 
                         max_battery = nb_tuple2->battery();
