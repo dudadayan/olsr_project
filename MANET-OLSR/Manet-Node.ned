@@ -53,6 +53,8 @@ module Manet_Node
         battery: InetSimpleBattery
 		{    
     		parameters:
+    		    @signal[batteryState](type = "double");
+    		    @statistic[batteryState](title = "battery state"; source = "batteryState"; record =  vector, stats; interpolationmode = none);
     		    @display("p=60,400;i=block/control");
 		}
         interfaceTable: InterfaceTable {
@@ -85,6 +87,8 @@ module Manet_Node
         }
         manetrouting: ManetRouting {
             parameters:
+                @signal[MPRCounter](type = "int");
+    		    @statistic[MPRCounter](title = "MPR Counter"; source = "MPRCounter"; record =  vector, stats; interpolationmode = none);
                 @display("p=153,247;i=block/network2");
         }
         // the name of radio interface must have "wlan", valid examples wlan, wlan802, localwlan ....

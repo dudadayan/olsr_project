@@ -436,6 +436,7 @@ OLSR_MsgTimer::expire()
 void
 OLSR::initialize(int stage)
 {
+    mpr_counter = registerSignal("MPRCounter");
     if (stage==4)
     {
         //nb->subscribe(this,NF_HOSTPOSITION_UPDATED);
@@ -1046,6 +1047,8 @@ OLSR::mpr_computation()
         if (N2.begin() != N2.end())
             goto step3;
     }
+
+    emit(mpr_counter, state_.mprset().size());
 }
 
 ///

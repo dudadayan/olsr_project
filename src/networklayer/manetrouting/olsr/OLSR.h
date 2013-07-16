@@ -382,6 +382,9 @@ class OLSR : public ManetRoutingBase
     uint64_t packetSent;
     uint64_t packetRecv;
 
+    simsignal_t mpr_counter;
+
+
     //std::priority_queue<TimerQueueElem> *timerQueuePtr;
     TimerQueue *timerQueuePtr;
 
@@ -540,7 +543,7 @@ class OLSR : public ManetRoutingBase
 
     static double       emf_to_seconds(uint8_t);
     static uint8_t      seconds_to_emf(double);
-    static int      node_id(const nsaddr_t&);
+    static int          node_id(const nsaddr_t&);
 
     // Routing information access
     virtual uint32_t getRoute(const Uint128 &,std::vector<Uint128> &);
